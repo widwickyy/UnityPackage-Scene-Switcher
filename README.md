@@ -23,7 +23,7 @@ A powerful editor tool for quick scene switching in Unity. Stop digging through 
 Via Unity Package Manager:
 1. Open Package Manager (Window > Package Manager)
 2. Click + → Add package from git URL...
-3. Enter: https://github.com/ddky16/UnityPackage-Scene-Switcher.git
+3. Enter: https://github.com/widwickyy/UnityPackage-Scene-Switcher.git
 
 ## Usage
 
