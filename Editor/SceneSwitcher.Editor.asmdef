@@ -1,9 +1,7 @@
 {
-    "name": "SceneSwitcher.Editor",
-    "rootNamespace": "SceneSwitcher.Editor",
-    "references": [
-        ""
-    ],
+    "name": "com.widwickyy.sceneswitcher",
+    "rootNamespace": "Widwickyy.SceneSwitcher.Editor",
+    "references": [],
     "includePlatforms": [
         "Editor"
     ],

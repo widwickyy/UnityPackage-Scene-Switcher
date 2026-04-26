@@ -1,13 +1,12 @@
 {
-  "name": "com.utilities.sceneswitcher",
+  "name": "com.widwickyy.sceneswitcher",
   "version": "1.0.0",
   "displayName": "Scene Switcher",
   "description": "A powerful editor tool for quick scene switching in Unity. Features include dropdown selection, favorites, recent scenes, keyboard shortcuts, and Scene View toolbar integration.",
-  "unity": "2020.3",
-  "unityRelease": "0f1",
-  "documentationUrl": "https://github.com/ddky16/UnityPackage-Scene-Switcher/blob/main/README.md",
-  "changelogUrl": "https://github.com/ddky16/UnityPackage-Scene-Switcher/blob/main/CHANGELOG.md",
-  "licensesUrl": "https://github.com/ddky16/UnityPackage-Scene-Switcher/blob/main/LICENSE",
+  "unity": "2022.3",
+  "documentationUrl": "https://github.com/widwickyy/UnityPackage-Scene-Switcher/blob/main/README.md",
+  "changelogUrl": "https://github.com/widwickyy/UnityPackage-Scene-Switcher/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/widwickyy/UnityPackage-Scene-Switcher/blob/main/LICENSE",
   "keywords": [
     "scene",
     "editor",
@@ -16,9 +15,9 @@
     "productivity"
   ],
   "author": {
-    "name": "Dicky Dwi Darmawan",
-    "email": "widwickyy@gmail.com",
-    "url": "https://github.com/ddky16"
+    "name": "Widwickyy",
+    "url": "https://github.com/widwickyy",
+    "email": "widwickyy@gmail.com"
   },
   "type": "tool",
   "samples": []

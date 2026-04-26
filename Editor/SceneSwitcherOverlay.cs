@@ -7,12 +7,48 @@ using UnityEngine.UIElements;
 
 namespace SceneSwitcher.Editor
 {
+    internal static class SceneSwitcherIconUtility
+    {
+        public const string PackageIconPath = "Packages/com.widwickyy.sceneswitcher/Editor/Icon/icon.png";
+
+        private const string IconGuid = "9f6d45fe65cd14843aa9c7e3ff678fb7";
+        private const string AssetIconPath = "Assets/Editor/Icon/icon.png";
+
+        public static Texture2D LoadIcon()
+        {
+            var iconPath = AssetDatabase.GUIDToAssetPath(IconGuid);
+            if (!string.IsNullOrEmpty(iconPath))
+            {
+                var iconByGuid = AssetDatabase.LoadAssetAtPath<Texture2D>(iconPath);
+                if (iconByGuid != null)
+                {
+                    return iconByGuid;
+                }
+            }
+
+            var iconByPackagePath = AssetDatabase.LoadAssetAtPath<Texture2D>(PackageIconPath);
+            if (iconByPackagePath != null)
+            {
+                return iconByPackagePath;
+            }
+
+            var iconByAssetPath = AssetDatabase.LoadAssetAtPath<Texture2D>(AssetIconPath);
+            if (iconByAssetPath != null)
+            {
+                return iconByAssetPath;
+            }
+
+            return EditorGUIUtility.ObjectContent(null, typeof(SceneAsset)).image as Texture2D
+                ?? EditorGUIUtility.FindTexture("SceneAsset Icon") as Texture2D;
+        }
+    }
+
     /// <summary>
     /// Unity 2021.2+ Overlay that adds scene switching to the Scene View toolbar.
     /// This integrates directly with Unity's modern overlay system.
     /// </summary>
     [Overlay(typeof(SceneView), "Scene Switcher", true)]
-    [Icon("d_SceneAsset Icon")]
+    [Icon(SceneSwitcherIconUtility.PackageIconPath)]
     public class SceneSwitcherOverlay : ToolbarOverlay
     {
         public SceneSwitcherOverlay() : base(
@@ -125,7 +161,7 @@ namespace SceneSwitcher.Editor
         public SceneSwitcherOpenWindowButton()
         {
             text = "";
-            icon = EditorGUIUtility.IconContent("d_winbtn_win_max").image as Texture2D;
+            icon = SceneSwitcherIconUtility.LoadIcon();
             tooltip = "Open Scene Switcher Window (Ctrl+Shift+O)";
             clicked += SceneSwitcherWindow.ShowWindow;
         }
